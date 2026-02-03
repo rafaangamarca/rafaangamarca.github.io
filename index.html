@@ -2,32 +2,35 @@
 <html lang="es">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y75569T6RX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y75569T6RX');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y75569T6RX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y75569T6RX');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Fit Push | Biblioteca de Ejercicios y Planes de Entrenamiento</title>
-    <meta name="description" content="Descubre la biblioteca de ejercicios más completa en Fit Push. Guías técnicas de press de banca, sentadillas y planes de musculación para principiantes y avanzados.">
-    <meta name="keywords" content="fitness, gimnasio, biblioteca de ejercicios, musculación, técnica de ejercicios, planes de entrenamiento, hipertrofia">
+    <meta name="description" content="Descubre la biblioteca de ejercicios más completa en Fit Push. Guías técnicas y planes de musculación.">
+    <meta name="keywords" content="fitness, gimnasio, biblioteca de ejercicios, musculación">
     <meta name="author" content="Fit Push">
-    <meta name="robots" content="index, follow"> <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow"> 
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Fit Push | Tu Biblioteca de Entrenamiento">
-    <meta property="og:description" content="Accede a guías técnicas y planes diseñados por ciencia. Forja tu mejor versión.">
-    <meta property="og:image" content="https://rafaangamarca.github.io/images/img1.png"> <meta property="og:url" content="https://rafaangamarca.github.io/"
+    <meta property="og:description" content="Accede a guías técnicas y planes diseñados por ciencia.">
+    <meta property="og:image" content="https://rafaangamarca.github.io/images/img1.png"> 
+    <meta property="og:url" content="https://rafaangamarca.github.io/">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fit Push | Tu Biblioteca de Entrenamiento">
-    <meta name="twitter:description" content="Mejora tu técnica y fuerza con nuestra base de datos de ejercicios gratuita.">
+    <meta name="twitter:description" content="Mejora tu técnica y fuerza con nuestra base de datos.">
     <meta name="twitter:image" content="https://rafaangamarca.github.io/images/img1.png">
 
-    <link rel="icon" type="image/png" href="favicon.png"> <link rel="canonical" href="https://rafaangamarca.github.io/">
+    <link rel="icon" type="image/png" href="favicon.png"> 
+    <link rel="canonical" href="https://rafaangamarca.github.io/">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -47,7 +50,6 @@
             color: var(--text-light);
         }
 
-        /* Optimizacion SEO: Los encabezados deben tener jerarquía visual clara */
         h1, h2, h3, h4, h5 {
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
@@ -55,7 +57,7 @@
 
         /* Navbar */
         .navbar {
-            background-color: rgba(0,0,0,0.9) !important;
+            background-color: rgba(0,0,0,0.95) !important;
             border-bottom: 1px solid #333;
         }
         .navbar-brand {
@@ -63,13 +65,9 @@
             font-weight: bold;
             letter-spacing: 1px;
         }
-        .nav-link {
-            color: #fff !important;
-            transition: 0.3s;
-        }
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
+        .nav-link { color: #fff !important; transition: 0.3s; }
+        .nav-link:hover { color: var(--primary-color) !important; }
+        
         .btn-neon {
             background-color: var(--primary-color);
             color: #000;
@@ -86,8 +84,8 @@
 
         /* Hero Section */
         .hero {
-            /* IMPORTANTE SEO: Usar WebP comprimido para esta imagen de fondo en producción */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://www.menzig.fit/images/a/0000/52-h1.jpg');
+            /* He añadido un fallback por si la imagen externa falla */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -100,14 +98,16 @@
         /* Cards de Ejercicios */
         .exercise-card {
             background-color: var(--card-bg);
-            border: none;
+            border: 1px solid transparent;
             border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: all 0.3s;
             height: 100%;
+            cursor: pointer;
         }
         .exercise-card:hover {
             transform: translateY(-5px);
+            border-color: var(--primary-color);
             box-shadow: 0 10px 20px rgba(202, 255, 51, 0.1);
         }
         .card-img-top {
@@ -120,21 +120,28 @@
             border: 1px solid var(--primary-color);
         }
 
-        /* Footer */
+        /* Estilos del Modal */
+        .modal-content {
+            background-color: #252525;
+            color: #fff;
+            border: 1px solid #444;
+        }
+        .modal-header, .modal-footer { border-color: #444; }
+        .btn-close-white { filter: invert(1); }
+
         footer {
             background-color: #000;
             padding: 40px 0;
             border-top: 1px solid #333;
         }
     </style>
-    
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Navegación principal">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-dumbbell" aria-hidden="true"></i> FIT PUSH</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+            <a class="navbar-brand" href="#"><i class="fas fa-dumbbell"></i> FIT PUSH</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -152,127 +159,253 @@
         <div class="container">
             <h1 class="display-3 fw-bold text-white mb-3">FORJA TU <span style="color:var(--primary-color)">MEJOR VERSIÓN</span></h1>
             <p class="lead text-light mb-4">Accede a la biblioteca de ejercicios más completa y planes diseñados por ciencia.</p>
-            <a href="#biblioteca" class="btn btn-neon btn-lg" title="Ir a la lista de ejercicios">Explorar Ejercicios</a>
+            <a href="#biblioteca" class="btn btn-neon btn-lg">Explorar Ejercicios</a>
         </div>
     </section>
 
     <section id="biblioteca" class="py-5">
         <div class="container">
-            <div class="row mb-4 align-items-center">
-                <div class="col-md-6">
+            <div class="row mb-5 g-3 align-items-center">
+                <div class="col-md-5">
                     <h2 class="mb-0">Biblioteca de Movimientos</h2>
                 </div>
-                <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                    <select class="form-select d-inline-block w-auto bg-dark text-light border-secondary" aria-label="Filtrar por músculo">
-                        <option>Todos los músculos</option>
-                        <option>Pecho</option>
-                        <option>Espalda</option>
-                        <option>Pierna</option>
-                    </select>
-                    <select class="form-select d-inline-block w-auto bg-dark text-light border-secondary ms-2" aria-label="Filtrar por dificultad">
-                        <option>Dificultad</option>
-                        <option>Principiante</option>
-                        <option>Avanzado</option>
-                    </select>
+                <div class="col-md-7">
+                    <div class="row g-2">
+                        <div class="col-12 col-lg-5">
+                            <input type="text" id="searchInput" class="form-control bg-dark text-light border-secondary" placeholder="Buscar ejercicio...">
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <select id="muscleFilter" class="form-select bg-dark text-light border-secondary">
+                                <option value="all">Todos</option>
+                                <option value="Pectoral">Pectoral</option>
+                                <option value="Espalda">Espalda</option>
+                                <option value="Pierna">Pierna</option>
+                                <option value="Hombros">Hombros</option>
+                                <option value="Bíceps">Bíceps</option>
+                                <option value="Tríceps">Tríceps</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <select id="difficultyFilter" class="form-select bg-dark text-light border-secondary">
+                                <option value="all">Dificultad</option>
+                                <option value="Principiante">Principiante</option>
+                                <option value="Intermedio">Intermedio</option>
+                                <option value="Avanzado">Avanzado</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-md-4 col-sm-6">
-                    <article class="card exercise-card">
-                        <img src="https://placehold.co/400x300/333/caff33?text=Press+de+Banca" class="card-img-top" alt="Hombre realizando press de banca con barra para pecho" loading="lazy">
-                        <div class="card-body">
-                            <span class="badge badge-muscle mb-2">Pectoral</span>
-                            <h3 class="h5 card-title text-white">Press de Banca</h3>
-                            <p class="card-text text-secondary small">El ejercicio compuesto fundamental para el desarrollo de la fuerza y masa del tren superior.</p>
-                            <a href="#" class="text-decoration-none" style="color:var(--primary-color)" aria-label="Ver técnica del press de banca">Ver técnica <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
+            <div class="row g-4" id="exercises-container">
                 </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <article class="card exercise-card">
-                        <img src="https://placehold.co/400x300/333/caff33?text=Sentadilla" class="card-img-top" alt="Mujer realizando sentadilla trasera con barra olímpica" loading="lazy">
-                        <div class="card-body">
-                            <span class="badge badge-muscle mb-2">Piernas / Glúteo</span>
-                            <h3 class="h5 card-title text-white">Sentadilla Trasera</h3>
-                            <p class="card-text text-secondary small">Movimiento rey para el desarrollo del tren inferior. Requiere estabilidad del core.</p>
-                            <a href="#" class="text-decoration-none" style="color:var(--primary-color)" aria-label="Ver técnica de la sentadilla">Ver técnica <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <article class="card exercise-card">
-                        <img src="https://placehold.co/400x300/333/caff33?text=Dominadas" class="card-img-top" alt="Atleta haciendo dominadas estrictas en barra" loading="lazy">
-                        <div class="card-body">
-                            <span class="badge badge-muscle mb-2">Espalda</span>
-                            <h3 class="h5 card-title text-white">Dominadas Estrictas</h3>
-                            <p class="card-text text-secondary small">Ejercicio de peso corporal para ensanchar la espalda y fortalecer bíceps.</p>
-                            <a href="#" class="text-decoration-none" style="color:var(--primary-color)" aria-label="Ver técnica de las dominadas">Ver técnica <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                </div>
-
-                 <div class="col-md-4 col-sm-6">
-                    <article class="card exercise-card">
-                        <img src="https://placehold.co/400x300/333/caff33?text=Peso+Muerto" class="card-img-top" alt="Levantamiento de peso muerto convencional" loading="lazy">
-                        <div class="card-body">
-                            <span class="badge badge-muscle mb-2">Cadena Posterior</span>
-                            <h3 class="h5 card-title text-white">Peso Muerto</h3>
-                            <p class="card-text text-secondary small">Levantamiento total que involucra isquios, glúteos y espalda baja.</p>
-                            <a href="#" class="text-decoration-none" style="color:var(--primary-color)" aria-label="Ver técnica del peso muerto">Ver técnica <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                </div>
-
-                 <div class="col-md-4 col-sm-6">
-                    <article class="card exercise-card">
-                        <img src="https://placehold.co/400x300/333/caff33?text=Press+Militar" class="card-img-top" alt="Press militar de pie con barra" loading="lazy">
-                        <div class="card-body">
-                            <span class="badge badge-muscle mb-2">Hombros</span>
-                            <h3 class="h5 card-title text-white">Press Militar</h3>
-                            <p class="card-text text-secondary small">Empuje vertical para el desarrollo de deltoides y tríceps.</p>
-                            <a href="#" class="text-decoration-none" style="color:var(--primary-color)" aria-label="Ver técnica del press militar">Ver técnica <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                </div>
-
-                 <div class="col-md-4 col-sm-6">
-                    <article class="card exercise-card">
-                        <img src="https://placehold.co/400x300/333/caff33?text=Curl+Barra" class="card-img-top" alt="Curl de bíceps con barra de pie" loading="lazy">
-                        <div class="card-body">
-                            <span class="badge badge-muscle mb-2">Bíceps</span>
-                            <h3 class="h5 card-title text-white">Curl con Barra</h3>
-                            <p class="card-text text-secondary small">Aislamiento clásico para el desarrollo de los flexores del codo.</p>
-                            <a href="#" class="text-decoration-none" style="color:var(--primary-color)" aria-label="Ver técnica del curl de bíceps">Ver técnica <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                </div>
-            </div>
             
+            <div id="no-results" class="text-center py-5 d-none">
+                <h4 class="text-secondary">No se encontraron ejercicios con esos filtros.</h4>
+            </div>
+
             <div class="text-center mt-5">
-                <button class="btn btn-outline-light px-5">Cargar más ejercicios</button>
+                <button class="btn btn-outline-light px-5" onclick="alert('Funcionalidad de paginación pendiente de backend')">Cargar más ejercicios</button>
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="exerciseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Título Ejercicio</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modalImg" src="" class="img-fluid rounded mb-3" alt="Ejercicio">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <span class="badge badge-muscle me-2" id="modalMuscle">Músculo</span>
+                                <span class="badge bg-secondary" id="modalDiff">Dificultad</span>
+                            </div>
+                            <p id="modalDesc" class="text-light">Descripción</p>
+                            <hr class="border-secondary">
+                            <h6>Consejo Pro:</h6>
+                            <p class="small text-secondary">Mantén siempre la técnica por encima del peso.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container text-center">
             <h4 class="text-white mb-3">FITPUSH</h4>
             <div class="mb-3">
-                <a href="#" class="text-secondary me-3" aria-label="Visitar Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                <a href="#" class="text-secondary me-3" aria-label="Visitar Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-                <a href="#" class="text-secondary" aria-label="Visitar Youtube"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="#" class="text-secondary me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-secondary me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-youtube fa-lg"></i></a>
             </div>
             <p class="text-secondary small">&copy; 2025 FITPUSH. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+    <script>
+        // 1. DATA: Aquí añades tus ejercicios. Es mucho más limpio que usar HTML.
+        const exercisesDB = [
+            {
+                id: 1,
+                title: "Press de Banca",
+                muscle: "Pectoral",
+                difficulty: "Intermedio",
+                img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop",
+                desc: "El rey de los ejercicios de torso. Túmbate, retrae escápulas, baja la barra al pecho medio y empuja explosivamente."
+            },
+            {
+                id: 2,
+                title: "Sentadilla Trasera",
+                muscle: "Pierna",
+                difficulty: "Avanzado",
+                img: "https://images.unsplash.com/photo-1574680096141-1cddd32e04ca?q=80&w=600&auto=format&fit=crop",
+                desc: "Barra sobre trapecios. Pies al ancho de hombros. Baja rompiendo el paralelo manteniendo la espalda neutra."
+            },
+            {
+                id: 3,
+                title: "Dominadas Estrictas",
+                muscle: "Espalda",
+                difficulty: "Intermedio",
+                img: "https://images.unsplash.com/photo-1598971639058-211a73287750?q=80&w=600&auto=format&fit=crop",
+                desc: "Cuélgate y tracciona llevando el pecho a la barra. Controla la bajada para máxima hipertrofia."
+            },
+            {
+                id: 4,
+                title: "Peso Muerto",
+                muscle: "Pierna",
+                difficulty: "Avanzado",
+                img: "https://images.unsplash.com/photo-1603287681836-e60567a2d119?q=80&w=600&auto=format&fit=crop",
+                desc: "Levantamiento total. Barra pegada a las tibias, espalda recta y empuja el suelo con las piernas."
+            },
+            {
+                id: 5,
+                title: "Press Militar",
+                muscle: "Hombros",
+                difficulty: "Intermedio",
+                img: "https://images.unsplash.com/photo-1532029837066-6e53e75d6367?q=80&w=600&auto=format&fit=crop",
+                desc: "Empuje vertical estricto. No arquees la espalda baja y bloquea los codos arriba."
+            },
+            {
+                id: 6,
+                title: "Curl con Barra",
+                muscle: "Bíceps",
+                difficulty: "Principiante",
+                img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop",
+                desc: "Codos pegados al cuerpo. Sube la barra sin balancearte y baja lento."
+            },
+            {
+                id: 7,
+                title: "Extensiones de Tríceps",
+                muscle: "Tríceps",
+                difficulty: "Principiante",
+                img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop", // Placeholder
+                desc: "En polea alta, extiende los codos hacia abajo separando la cuerda al final."
+            },
+            {
+                id: 8,
+                title: "Elevaciones Laterales",
+                muscle: "Hombros",
+                difficulty: "Principiante",
+                img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop", // Placeholder
+                desc: "Levanta las mancuernas hacia los lados hasta la altura de los hombros, codos ligeramente flexionados."
+            }
+        ];
+
+        const container = document.getElementById('exercises-container');
+        const searchInput = document.getElementById('searchInput');
+        const muscleFilter = document.getElementById('muscleFilter');
+        const diffFilter = document.getElementById('difficultyFilter');
+        const noResults = document.getElementById('no-results');
+
+        // 2. FUNCIÓN DE RENDERIZADO (Pinta el HTML)
+        function renderExercises(data) {
+            container.innerHTML = '';
+            
+            if (data.length === 0) {
+                noResults.classList.remove('d-none');
+                return;
+            }
+            noResults.classList.add('d-none');
+
+            data.forEach(ex => {
+                const card = `
+                    <div class="col-md-4 col-sm-6 animate-fade">
+                        <article class="card exercise-card" onclick="openModal(${ex.id})">
+                            <img src="${ex.img}" class="card-img-top" alt="${ex.title}" loading="lazy">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge badge-muscle">${ex.muscle}</span>
+                                    <small class="text-secondary">${ex.difficulty}</small>
+                                </div>
+                                <h3 class="h5 card-title text-white">${ex.title}</h3>
+                                <p class="card-text text-secondary small text-truncate">${ex.desc}</p>
+                                <div class="mt-3 text-end">
+                                    <span class="text-decoration-none small" style="color:var(--primary-color)">
+                                        Ver técnica <i class="fas fa-arrow-right ms-1"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        // 3. FUNCIÓN DE FILTRADO
+        function filterData() {
+            const query = searchInput.value.toLowerCase();
+            const muscle = muscleFilter.value;
+            const diff = diffFilter.value;
+
+            const filtered = exercisesDB.filter(item => {
+                const matchSearch = item.title.toLowerCase().includes(query);
+                const matchMuscle = muscle === 'all' || item.muscle === muscle;
+                const matchDiff = diff === 'all' || item.difficulty === diff;
+                return matchSearch && matchMuscle && matchDiff;
+            });
+
+            renderExercises(filtered);
+        }
+
+        // 4. MODAL LOGIC
+        function openModal(id) {
+            const ex = exercisesDB.find(item => item.id === id);
+            if (!ex) return;
+            
+            document.getElementById('modalTitle').innerText = ex.title;
+            document.getElementById('modalImg').src = ex.img;
+            document.getElementById('modalDesc').innerText = ex.desc;
+            document.getElementById('modalMuscle').innerText = ex.muscle;
+            document.getElementById('modalDiff').innerText = ex.difficulty;
+            
+            new bootstrap.Modal(document.getElementById('exerciseModal')).show();
+        }
+
+        // Listeners para que funcione al escribir o cambiar select
+        searchInput.addEventListener('input', filterData);
+        muscleFilter.addEventListener('change', filterData);
+        diffFilter.addEventListener('change', filterData);
+
+        // Carga inicial
+        renderExercises(exercisesDB);
+    </script>
+</body>
 </html>
+
 
 
 
