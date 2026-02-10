@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada - 404</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            padding: 20px;
+        }
+        h1 { font-size: 80px; margin: 0; color: #ff4757; }
+        p { font-size: 1.2rem; }
+        .timer { font-weight: bold; color: #2f3542; }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #2f3542;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover { background-color: #57606f; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>404</h1>
+        <h2>¡Ups! Te has perdido</h2>
+        <p>La página que buscas no existe o fue movida.</p>
+        <p>Serás redirigido al inicio en <span id="count" class="timer">5</span> segundos...</p>
+        <a href="index.html" class="btn">Ir al inicio ahora</a>
+    </div>
+
+    <script>
+        // Configuración de la redirección
+        let seconds = 5;
+        const display = document.getElementById('count');
+
+        const countdown = setInterval(() => {
+            seconds--;
+            display.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = "index.html"; // Asegúrate que tu archivo principal se llame index.html
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
