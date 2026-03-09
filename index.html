@@ -428,30 +428,22 @@ trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword"
         renderExercises(exercisesDB);
     </script>
     <script type="module">
-      import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/index.js'
+      import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
 
       Typebot.initBubble({
-        typebot: "mi-typebot-fitpush",
-        const typebotInitScript = document.createElement("script");
-typebotInitScript.type = "module";
-typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
-
-Typebot.initBubble({
-  typebot: "my-typebot-8slgmyk",
-  theme: {
-    button: { backgroundColor: "#1D1D1D" },
-    chatWindow: { backgroundColor: "#F8F8F8" },
-  },
-});
-`;
-document.body.append(typebotInitScript);
-
+        typebot: "my-typebot-8slgmyk",
+        theme: {
+          button: { backgroundColor: "#caff33", iconColor: "#000000" },
+          chatWindow: { backgroundColor: "#121212" },
+        },
       });
     </script>
   </body>
 </html>
-</body>
+  </body>
 </html>
+
+
 
 
 
