@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suplementación Científica | Fit Push</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #caff33; /* Tu color verde exacto */
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-light: #f5f5f5;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Navbar consistente con tus otras páginas */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .navbar-brand span {
+            color: var(--primary-color);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        /* Cards con el estilo de tu repositorio */
+        .sup-card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .sup-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .text-primary-custom {
+            color: var(--primary-color);
+        }
+
+        .badge-evidence {
+            background-color: var(--primary-color);
+            color: black;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #b8e62e;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">FIT <span>PUSH</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ejercicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rutina.html">Rutinas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="macros.html">Macros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="suplementos.html">Suplementos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Guía de <span class="text-primary-custom">Suplementación</span></h1>
+            <p class="text-secondary">Información basada en ciencia para potenciar tus resultados.</p>
+        </div>
+    </header>
+
+    <section class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card sup-card h-100 p-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <i class="fas fa-vial fa-2x text-primary-custom"></i>
+                        <span class="badge badge-evidence">Nivel A</span>
+                    </div>
+                    <h3>Creatina</h3>
+                    <p class="text-secondary">El suplemento con más evidencia para ganar fuerza y masa muscular.</p>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-check text-primary-custom me-2"></i>Dosis: 3-5g/día</li>
+                        <li><i class="fas fa-check text-primary-custom me-2"></i>Mejora la potencia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card sup-card h-100 p-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <i class="fas fa-shaker fa-2x text-primary-custom"></i>
+                        <span class="badge badge-evidence">Nivel A</span>
+                    </div>
+                    <h3>Proteína Whey</h3>
+                    <p class="text-secondary">Facilita llegar a tus requerimientos diarios de forma cómoda.</p>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-check text-primary-custom me-2"></i>Rápida absorción</li>
+                        <li><i class="fas fa-check text-primary-custom me-2"></i>Ideal post-entreno</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card sup-card h-100 p-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <i class="fas fa-bolt fa-2x text-primary-custom"></i>
+                        <span class="badge badge-evidence">Nivel A</span>
+                    </div>
+                    <h3>Pre-Entreno</h3>
+                    <p class="text-secondary">Mejora el foco mental y reduce la fatiga percibida.</p>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-check text-primary-custom me-2"></i>Cafeína anhidra</li>
+                        <li><i class="fas fa-check text-primary-custom me-2"></i>Beta-Alanina</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 text-center p-4" style="background-color: #1a1a1a; border-radius: 10px; border: 1px dashed var(--primary-color);">
+            <h4 class="mb-3">¿No sabes cuánta proteína necesitas?</h4>
+            <a href="macros.html" class="btn btn-custom px-4">Calcular mis Macros ahora</a>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center border-top border-secondary mt-5">
+        <p class="text-secondary small">© 2025 Fit Push - Ciencia y Rendimiento</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
