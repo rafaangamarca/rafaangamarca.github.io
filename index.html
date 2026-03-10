@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y75569T6RX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-Y75569T6RX');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Fit Push",
+      "url": "https://rafaangamarca.github.io/",
+      "description": "Plataforma de fitness con herramientas de cálculo de macros, generador de rutinas y biblioteca de ejercicios.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All",
+      "author": {
+        "@type": "Person",
+        "name": "Rafael Angamarca"
+      }
+    }
     </script>
 
     <meta name="msvalidate.01" content="565867F8B3F0004CA3799D989402FA71" />
@@ -57,6 +72,23 @@
             text-transform: uppercase;
         }
 
+        /* Enlace de Salto (Accesibilidad) */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: black;
+            padding: 10px 20px;
+            z-index: 9999;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 0 0 10px 10px;
+            transition: top 0.3s;
+        }
+        .skip-link:focus { top: 0; }
+
         /* Navbar */
         .navbar {
             background-color: rgba(0,0,0,0.95) !important;
@@ -86,7 +118,6 @@
 
         /* Hero Section */
         .hero {
-            /* He añadido un fallback por si la imagen externa falla */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -137,17 +168,19 @@
             border-top: 1px solid #333;
         }
         
-iframe[id^="trends-widget-"] {
-    filter: invert(0.9) hue-rotate(180deg);
-    border-radius: 10px;
-}
+        iframe[id^="trends-widget-"] {
+            filter: invert(0.9) hue-rotate(180deg);
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
 
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-dumbbell"></i> FIT PUSH</a>
+            <a class="navbar-brand" href="#" title="Fit Push Inicio"><i class="fas fa-dumbbell"></i> FIT PUSH</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -162,62 +195,78 @@ iframe[id^="trends-widget-"] {
         </div>
     </nav>
 
-    <section id="inicio" class="hero">
-        <div class="container">
-            <h1 class="display-3 fw-bold text-white mb-3">FORJA TU <span style="color:var(--primary-color)">MEJOR VERSIÓN</span></h1>
-            <p class="lead text-light mb-4">Accede a la biblioteca de ejercicios más completa y planes diseñados por ciencia.</p>
-            <a href="#biblioteca" class="btn btn-neon btn-lg me-3">Explorar Ejercicios</a>
-<a href="rutina.html" class="btn btn-outline-light btn-lg">Armar mi Rutina <i class="fas fa-calendar-alt ms-2"></i></a>
-            <a href="macros.html" class="btn btn-neon btn-lg">Calculadora de macros</a>
-        </div>
-    </section>
+    <main id="main-content">
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1 class="display-3 fw-bold text-white mb-3">FORJA TU <span style="color:var(--primary-color)">MEJOR VERSIÓN</span></h1>
+                <p class="lead text-light mb-4">Accede a la biblioteca de ejercicios más completa y planes diseñados por ciencia.</p>
+                <a href="#biblioteca" class="btn btn-neon btn-lg me-3">Explorar Ejercicios</a>
+                <a href="rutina.html" class="btn btn-outline-light btn-lg">Armar mi Rutina <i class="fas fa-calendar-alt ms-2"></i></a>
+                <a href="macros.html" class="btn btn-neon btn-lg">Calculadora de macros</a>
+            </div>
+        </section>
 
-    <section id="biblioteca" class="py-5">
-        <div class="container">
-            <div class="row mb-5 g-3 align-items-center">
-                <div class="col-md-5">
-                    <h2 class="mb-0">Biblioteca de Movimientos</h2>
-                </div>
-                <div class="col-md-7">
-                    <div class="row g-2">
-                        <div class="col-12 col-lg-5">
-                            <input type="text" id="searchInput" class="form-control bg-dark text-light border-secondary" placeholder="Buscar ejercicio...">
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <select id="muscleFilter" class="form-select bg-dark text-light border-secondary">
-                                <option value="all">Todos</option>
-                                <option value="Pectoral">Pectoral</option>
-                                <option value="Espalda">Espalda</option>
-                                <option value="Pierna">Pierna</option>
-                                <option value="Hombros">Hombros</option>
-                                <option value="Bíceps">Bíceps</option>
-                                <option value="Tríceps">Tríceps</option>
-                            </select>
-                        </div>
-                        <div class="col-6 col-lg-4">
-                            <select id="difficultyFilter" class="form-select bg-dark text-light border-secondary">
-                                <option value="all">Dificultad</option>
-                                <option value="Principiante">Principiante</option>
-                                <option value="Intermedio">Intermedio</option>
-                                <option value="Avanzado">Avanzado</option>
-                            </select>
+        <section id="biblioteca" class="py-5">
+            <div class="container">
+                <div class="row mb-5 g-3 align-items-center">
+                    <div class="col-md-5">
+                        <h2 class="mb-0">Biblioteca de Movimientos</h2>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="row g-2">
+                            <div class="col-12 col-lg-5">
+                                <input type="text" id="searchInput" class="form-control bg-dark text-light border-secondary" placeholder="Buscar ejercicio...">
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <select id="muscleFilter" class="form-select bg-dark text-light border-secondary">
+                                    <option value="all">Todos</option>
+                                    <option value="Pectoral">Pectoral</option>
+                                    <option value="Espalda">Espalda</option>
+                                    <option value="Pierna">Pierna</option>
+                                    <option value="Hombros">Hombros</option>
+                                    <option value="Bíceps">Bíceps</option>
+                                    <option value="Tríceps">Tríceps</option>
+                                </select>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <select id="difficultyFilter" class="form-select bg-dark text-light border-secondary">
+                                    <option value="all">Dificultad</option>
+                                    <option value="Principiante">Principiante</option>
+                                    <option value="Intermedio">Intermedio</option>
+                                    <option value="Avanzado">Avanzado</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row g-4" id="exercises-container">
+                <div class="row g-4" id="exercises-container"></div>
+                
+                <div id="no-results" class="text-center py-5 d-none">
+                    <h4 class="text-secondary">No se encontraron ejercicios con esos filtros.</h4>
                 </div>
-            
-            <div id="no-results" class="text-center py-5 d-none">
-                <h4 class="text-secondary">No se encontraron ejercicios con esos filtros.</h4>
-            </div>
 
-            <div class="text-center mt-5">
-                <button class="btn btn-outline-light px-5" onclick="alert('Funcionalidad de paginación pendiente de backend')">Cargar más ejercicios</button>
+                <div class="text-center mt-5">
+                    <button class="btn btn-outline-light px-5" onclick="alert('Funcionalidad de paginación pendiente de backend')">Cargar más ejercicios</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="tendencias" class="py-5 bg-dark text-white">
+            <div class="container text-center">
+                <h2 class="mb-4">Tendencias del Fitness en Tiempo Real</h2>
+                <p class="mb-5">Descubre qué es lo que más se está buscando en el mundo del entrenamiento hoy.</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 bg-secondary p-3 rounded shadow-sm">
+                        <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/4356_RC01/embed_loader.js"></script>
+                        <script type="text/javascript">
+                        trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"gimnasio","geo":"ES","time":"now 1-d"}],"category":0,"property":""}, {"exploreQuery":"q=gimnasio&date=now%201-d&geo=ES&legacy&hl=es-EC","guestPath":"https://trends.google.com:443/trends/embed/"});
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <div class="modal fade" id="exerciseModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -229,7 +278,7 @@ iframe[id^="trends-widget-"] {
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img id="modalImg" src="" class="img-fluid rounded mb-3" alt="Ejercicio">
+                            <img id="modalImg" src="" class="img-fluid rounded mb-3" alt="Técnica de ejercicio">
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
@@ -250,30 +299,14 @@ iframe[id^="trends-widget-"] {
         </div>
     </div>
 
-    <section id="tendencias" class="py-5 bg-dark text-white">
-    <div class="container text-center">
-        <h2 class="mb-4">Tendencias del Fitness en Tiempo Real</h2>
-        <p class="mb-5">Descubre qué es lo que más se está buscando en el mundo del entrenamiento hoy.</p>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-10 bg-secondary p-3 rounded shadow-sm">
-                <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/4356_RC01/embed_loader.js"></script>
-<script type="text/javascript">
-trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"gimnasio","geo":"ES","time":"now 1-d"}],"category":0,"property":""}, {"exploreQuery":"q=gimnasio&date=now%201-d&geo=ES&legacy&hl=es-EC","guestPath":"https://trends.google.com:443/trends/embed/"});
-</script>
-            </div>
-        </div>
-    </div>
-</section>
-    
     <footer>
         <div class="container text-center">
             <h4 class="text-white mb-3">FITPUSH</h4>
             <div class="mb-3">
-                <a href="https://github.com/rafaangamarca" class="text-secondary me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                <a href="#" class="text-secondary me-3"><i class="fab fa-twitter fa-lg"></i></a>
-                <a href="#" class="text-secondary me-3"><i class="fab fa-youtube fa-lg"></i></a>
-                <a href="https://www.linkedin.com/feed/" class="text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="https://github.com/rafaangamarca" class="text-secondary me-3" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-secondary me-3" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-secondary me-3" title="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="https://www.linkedin.com/feed/" class="text-secondary" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
             </div>
             <p class="text-secondary small">&copy; 2025 FITPUSH. Todos los derechos reservados.</p>
             <p class="text-secondary small">Si quieres aprender sobre SEO y mucho más visita: <a href="https://www.jesusninoc.com/" target="_blank">jesusninoc.com</a></p>
@@ -283,72 +316,15 @@ trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword"
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // 1. DATA: Aquí añades tus ejercicios. Es mucho más limpio que usar HTML.
         const exercisesDB = [
-            {
-                id: 1,
-                title: "Press de Banca",
-                muscle: "Pectoral",
-                difficulty: "Intermedio",
-                img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop",
-                desc: "El rey de los ejercicios de torso. Túmbate, retrae escápulas, baja la barra al pecho medio y empuja explosivamente."
-            },
-            {
-                id: 2,
-                title: "Sentadilla Trasera",
-                muscle: "Pierna",
-                difficulty: "Avanzado",
-                img: "images/sentadillatrasera.jpg",
-                desc: "Barra sobre trapecios. Pies al ancho de hombros. Baja rompiendo el paralelo manteniendo la espalda neutra."
-            },
-            {
-                id: 3,
-                title: "Dominadas Estrictas",
-                muscle: "Espalda",
-                difficulty: "Intermedio",
-                img: "images/dominadas.jpg",
-                desc: "Cuélgate y tracciona llevando el pecho a la barra. Controla la bajada para máxima hipertrofia."
-            },
-            {
-                id: 4,
-                title: "Peso Muerto",
-                muscle: "Pierna",
-                difficulty: "Avanzado",
-                img: "images/pesomuerto.jpg",
-                desc: "Levantamiento total. Barra pegada a las tibias, espalda recta y empuja el suelo con las piernas."
-            },
-            {
-                id: 5,
-                title: "Press Militar",
-                muscle: "Hombros",
-                difficulty: "Intermedio",
-                img: "images/pressmilitar.jpg",
-                desc: "Empuje vertical estricto. No arquees la espalda baja y bloquea los codos arriba."
-            },
-            {
-                id: 6,
-                title: "Curl con Barra",
-                muscle: "Bíceps",
-                difficulty: "Principiante",
-                img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop",
-                desc: "Codos pegados al cuerpo. Sube la barra sin balancearte y baja lento."
-            },
-            {
-                id: 7,
-                title: "Extensiones de Tríceps",
-                muscle: "Tríceps",
-                difficulty: "Principiante",
-                img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop", // Placeholder
-                desc: "En polea alta, extiende los codos hacia abajo separando la cuerda al final."
-            },
-            {
-                id: 8,
-                title: "Elevaciones Laterales",
-                muscle: "Hombros",
-                difficulty: "Principiante",
-                img: "images/elevacioneslaterales.jpg", // Placeholder
-                desc: "Levanta las mancuernas hacia los lados hasta la altura de los hombros, codos ligeramente flexionados."
-            }
+            { id: 1, title: "Press de Banca", muscle: "Pectoral", difficulty: "Intermedio", img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop", desc: "El rey de los ejercicios de torso. Túmbate, retrae escápulas, baja la barra al pecho medio y empuja explosivamente." },
+            { id: 2, title: "Sentadilla Trasera", muscle: "Pierna", difficulty: "Avanzado", img: "images/sentadillatrasera.jpg", desc: "Barra sobre trapecios. Pies al ancho de hombros. Baja rompiendo el paralelo manteniendo la espalda neutra." },
+            { id: 3, title: "Dominadas Estrictas", muscle: "Espalda", difficulty: "Intermedio", img: "images/dominadas.jpg", desc: "Cuélgate y tracciona llevando el pecho a la barra. Controla la bajada para máxima hipertrofia." },
+            { id: 4, title: "Peso Muerto", muscle: "Pierna", difficulty: "Avanzado", img: "images/pesomuerto.jpg", desc: "Levantamiento total. Barra pegada a las tibias, espalda recta y empuja el suelo con las piernas." },
+            { id: 5, title: "Press Militar", muscle: "Hombros", difficulty: "Intermedio", img: "images/pressmilitar.jpg", desc: "Empuje vertical estricto. No arquees la espalda baja y bloquea los codos arriba." },
+            { id: 6, title: "Curl con Barra", muscle: "Bíceps", difficulty: "Principiante", img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop", desc: "Codos pegados al cuerpo. Sube la barra sin balancearte y baja lento." },
+            { id: 7, title: "Extensiones de Tríceps", muscle: "Tríceps", difficulty: "Principiante", img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop", desc: "En polea alta, extiende los codos hacia abajo separando la cuerda al final." },
+            { id: 8, title: "Elevaciones Laterales", muscle: "Hombros", difficulty: "Principiante", img: "images/elevacioneslaterales.jpg", desc: "Levanta las mancuernas hacia los lados hasta la altura de los hombros, codos ligeramente flexionados." }
         ];
 
         const container = document.getElementById('exercises-container');
@@ -357,21 +333,18 @@ trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword"
         const diffFilter = document.getElementById('difficultyFilter');
         const noResults = document.getElementById('no-results');
 
-        // 2. FUNCIÓN DE RENDERIZADO (Pinta el HTML)
         function renderExercises(data) {
             container.innerHTML = '';
-            
             if (data.length === 0) {
                 noResults.classList.remove('d-none');
                 return;
             }
             noResults.classList.add('d-none');
-
             data.forEach(ex => {
                 const card = `
-                    <div class="col-md-4 col-sm-6 animate-fade">
+                    <div class="col-md-4 col-sm-6">
                         <article class="card exercise-card" onclick="openModal(${ex.id})">
-                            <img src="${ex.img}" class="card-img-top" alt="${ex.title}" loading="lazy">
+                            <img src="${ex.img}" class="card-img-top" alt="Técnica de ${ex.title}" loading="lazy">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
                                     <span class="badge badge-muscle">${ex.muscle}</span>
@@ -386,88 +359,53 @@ trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword"
                                 </div>
                             </div>
                         </article>
-                    </div>
-                `;
+                    </div>`;
                 container.innerHTML += card;
             });
         }
 
-        // 3. FUNCIÓN DE FILTRADO
         function filterData() {
             const query = searchInput.value.toLowerCase();
             const muscle = muscleFilter.value;
             const diff = diffFilter.value;
-
             const filtered = exercisesDB.filter(item => {
                 const matchSearch = item.title.toLowerCase().includes(query);
                 const matchMuscle = muscle === 'all' || item.muscle === muscle;
                 const matchDiff = diff === 'all' || item.difficulty === diff;
                 return matchSearch && matchMuscle && matchDiff;
             });
-
             renderExercises(filtered);
         }
 
-        // 4. MODAL LOGIC
         function openModal(id) {
             const ex = exercisesDB.find(item => item.id === id);
             if (!ex) return;
-            
             document.getElementById('modalTitle').innerText = ex.title;
             document.getElementById('modalImg').src = ex.img;
             document.getElementById('modalDesc').innerText = ex.desc;
             document.getElementById('modalMuscle').innerText = ex.muscle;
             document.getElementById('modalDiff').innerText = ex.difficulty;
-            
             new bootstrap.Modal(document.getElementById('exerciseModal')).show();
         }
 
-        // Listeners para que funcione al escribir o cambiar select
         searchInput.addEventListener('input', filterData);
         muscleFilter.addEventListener('change', filterData);
         diffFilter.addEventListener('change', filterData);
-
-        // Carga inicial
         renderExercises(exercisesDB);
     </script>
-    <script type="module">
-      import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
 
-      Typebot.initBubble({
-        typebot: "my-typebot-8slgmyk",
-        theme: {
-          button: { backgroundColor: "#caff33", iconColor: "#000000" },
-          chatWindow: { backgroundColor: "#121212", maxHeight: "80vh", borderRadius: "25px" },
-        },
-      });
-    </script>
-  </body>
+    <div id="chatbot-assistant" role="complementary" aria-label="Asistente virtual de entrenamiento">
+        <script type="module">
+          import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
+          Typebot.initBubble({
+            typebot: "my-typebot-8slgmyk",
+            theme: {
+              button: { backgroundColor: "#caff33", iconColor: "#000000" },
+              chatWindow: { backgroundColor: "#121212", maxHeight: "80vh", borderRadius: "25px" },
+            },
+          });
+        </script>
+    </div>
+
+</body>
 </html>
-  </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
