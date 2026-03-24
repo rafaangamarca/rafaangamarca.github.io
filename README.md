@@ -25,10 +25,14 @@ Para llevar la experiencia al siguiente nivel, **Fit Push** integra un **Asisten
 * **Interfaz Dinámica**: La burbuja de chat está integrada de forma nativa en el DOM, permitiendo una interacción fluida sin interrumpir la navegación.
 * **Apoyo al Entrenamiento**: ¿No sabes qué ejercicio sigue? La IA te guía a través de las secciones del sitio de forma conversacional.
 
-<div align="center">
-    <img src="https://rafaangamarca.github.io/images_web/chatbot.png" width="45%" />
+<details>
+  <summary>Click para ver imagen del ChatBot</summary>
+  <br>
+  <div align="center">
+    <img src="https://rafaangamarca.github.io/images_web/chatbot.png" width="23%" />
   </div>
-  
+</details>
+
 ---
 
 ## 🛠️ Herramientas de Alto Rendimiento
