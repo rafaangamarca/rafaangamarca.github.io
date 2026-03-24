@@ -16,14 +16,31 @@
 ## 📖 Sobre el Proyecto
 **Fit Push** es una plataforma integral de fitness diseñada para optimizar el entrenamiento mediante herramientas técnicas. Desarrollada como parte de mi formación en **DAM** (Desarrollo de Aplicaciones Multiplataforma), combina una estética de alto rendimiento con utilidad práctica.
 
-## 🛠️ Características Principales
+---
 
-| Función | Descripción | Link |
-| :--- | :--- | :--- |
-| **Biblioteca** | Guías técnicas de ejercicios (Press Banca, Sentadilla, etc.). | [Ver](https://rafaangamarca.github.io/#biblioteca) |
-| **Rutinas** | Generador de planes Full Body, Torso/Pierna o PPL. | [Ver](https://rafaangamarca.github.io/rutina.html) |
-| **Macros** | Calculadora basada en la fórmula Mifflin-St Jeor. | [Ver](https://rafaangamarca.github.io/macros.html) |
-| **Suplementos** | Guía basada en evidencia científica (Nivel A). | [Ver](https://rafaangamarca.github.io/suplementos.html) |
+## 🤖 El Cerebro del Proyecto: Asistencia con IA
+Para llevar la experiencia al siguiente nivel, **Fit Push** integra un **Asistente Virtual inteligente** basado en IA (vía Typebot).
+
+* **Asesoría 24/7**: El chatbot está entrenado para resolver dudas rápidas sobre ejecución y técnica.
+* **Interfaz Dinámica**: La burbuja de chat está integrada de forma nativa en el DOM, permitiendo una interacción fluida sin interrumpir la navegación.
+* **Apoyo al Entrenamiento**: ¿No sabes qué ejercicio sigue? La IA te guía a través de las secciones del sitio de forma conversacional.
+
+---
+
+## 🛠️ Herramientas de Alto Rendimiento
+
+### 1. 🧬 Calculadora de Macros Pro
+Basada en la fórmula de **Mifflin-St Jeor**, permite a los usuarios obtener sus necesidades calóricas exactas según su género, edad, peso y nivel de actividad.
+* **Input Preciso**: Desglose automático de Proteínas, Grasas y Carbohidratos.
+
+### 2. 📅 Planificador Semanal Inteligente
+Generador dinámico que adapta el volumen de entrenamiento (3, 4 o 5 días) al tiempo disponible del usuario (30, 60 o 90 min).
+* **Timer de Descanso**: Incluye un cronómetro flotante en tiempo real para optimizar los tiempos de recuperación entre series.
+
+### 3. 📚 Biblioteca Técnica
+Visualización de ejercicios con tarjetas interactivas que filtran por grupo muscular y nivel de dificultad (Principiante, Intermedio, Avanzado).
+
+---
 
 ## 🚀 Tecnologías y Stack
 <div align="left">
@@ -49,5 +66,12 @@
 
 ## 👤 Contacto
 Desarrollado por **Rafael Angamarca**.
-- 💼 [LinkedIn](https://www.linkedin.com/feed/)
-- 📸 [Instagram](https://github.com/rafaangamarca)
+--
+<div align="center">
+  <a href="https://www.linkedin.com/feed/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://github.com/rafaangamarca">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</div>
