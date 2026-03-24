@@ -59,5 +59,5 @@
 
 <hr>
 <div align="center">
-  <p><em>Documento generado para el cierre de proyecto DAM - 2026</em></p>
+  <p><em>Cierre de proyecto - 2026</em></p>
 </div>
