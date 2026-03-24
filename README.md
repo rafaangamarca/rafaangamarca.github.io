@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://rafaangamarca.github.io/images/img1.png" width="600" alt="Fit Push Banner">
+  <img src="https://rafaangamarca.github.io/images_web/logo.png" width="450" alt="Fit Push Banner">
 
   # ⚡ FIT PUSH ⚡
   ### *Forja tu mejor versión con ciencia y tecnología*
@@ -59,8 +59,10 @@ Visualización de ejercicios con tarjetas interactivas que filtran por grupo mus
   <summary>Click para expandir capturas</summary>
   <br>
   <div align="center">
-    <img src="https://rafaangamarca.github.io/images/sentadillatrasera.jpg" width="45%" />
-    <img src="https://rafaangamarca.github.io/images/pressmilitar.jpg" width="45%" />
+    <img src="https://rafaangamarca.github.io/images_web/index.png" width="45%" />
+    <img src="https://rafaangamarca.github.io/images_web/biblioteca.png" width="45%" />
+    <img src="https://rafaangamarca.github.io/images_web/suplementos.png" width="45%" />
+    <img src="https://rafaangamarca.github.io/images_web/calculadora.png" width="45%" />
   </div>
 </details>
 
